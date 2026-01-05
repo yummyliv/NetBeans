@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>appmain.c</itemPath>
+      <itemPath>wifi.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -34,6 +34,8 @@
           <incDir>
             <pElem>C:/Program Files/Castles/VEGA1000/include</pElem>
             <pElem>C:/Program Files (x86)/Castles/VEGA1000/include</pElem>
+            <pElem>../../../V3AppWifi</pElem>
+            <pElem>../../../3173/CastlesPay3.0_Test_Release_V3173/CPComponent/VEGA1000M</pElem>
           </incDir>
           <commandLine>"-I${SDKV1INC}" -fsigned-char -Wundef -Wstrict-prototypes -Wno-trigraphs -Wimplicit -Wformat</commandLine>
         </cTool>
@@ -43,11 +45,18 @@
           <incDir>
             <pElem>C:/Program Files/Castles/VEGA1000/include</pElem>
             <pElem>C:/Program Files (x86)/Castles/VEGA1000/include</pElem>
+            <pElem>../../../3173/CastlesPay3.0_Test_Release_V3173/Util/PlatformRelated</pElem>
           </incDir>
           <commandLine>"-I${SDKV1INC}" -fsigned-char -Wundef -Wno-trigraphs -Wimplicit -Wformat</commandLine>
+          <preprocessorList>
+            <Elem>CTOS_API</Elem>
+          </preprocessorList>
         </ccTool>
         <linkerTool>
           <output>dist/V1/App/Wifi</output>
+          <linkerAddLib>
+            <pElem>lib</pElem>
+          </linkerAddLib>
           <commandlineTool>arm-oe-linux-gnueabi-g++</commandlineTool>
           <linkerLibItems>
             <linkerLibLibItem>pthread</linkerLibLibItem>
@@ -58,11 +67,13 @@
             <linkerLibLibItem>caemvl2</linkerLibLibItem>
             <linkerLibLibItem>caemvl2ap</linkerLibLibItem>
             <linkerLibLibItem>caclmdl</linkerLibLibItem>
+            <linkerLibLibItem>misc</linkerLibLibItem>
+            <linkerLibLibItem>miscex</linkerLibLibItem>
           </linkerLibItems>
           <commandLine>-L . "-L${SDKV1LIB}" "-L${SDKV1LIBN}"</commandLine>
         </linkerTool>
       </compileType>
-      <item path="appmain.c" ex="false" tool="0" flavor2="0">
+      <item path="wifi.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Debug" type="1">
@@ -104,7 +115,7 @@
           <commandLine>-L . "-L${SDKV1LIB}" "-L${SDKV1LIBN}"</commandLine>
         </linkerTool>
       </compileType>
-      <item path="appmain.c" ex="false" tool="0" flavor2="0">
+      <item path="wifi.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

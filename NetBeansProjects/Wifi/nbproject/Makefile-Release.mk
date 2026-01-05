@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/appmain.o
+	${OBJECTDIR}/wifi.o
 
 
 # C Compiler Flags
@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lpthread -ldl -lctosapi -lz -lfreetype -lcaemvl2 -lcaemvl2ap -lcaclmdl
+LDLIBSOPTIONS=-Llib -lpthread -ldl -lctosapi -lz -lfreetype -lcaemvl2 -lcaemvl2ap -lcaclmdl -lmisc -lmiscex
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -62,9 +62,9 @@ dist/V1/App/Wifi.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/V1/App
 	arm-oe-linux-gnueabi-g++ -o dist/V1/App/Wifi ${OBJECTFILES} ${LDLIBSOPTIONS} -L . "-L${SDKV1LIB}" "-L${SDKV1LIBN}"
 
-${OBJECTDIR}/appmain.o: appmain.c
+${OBJECTDIR}/wifi.o: wifi.cpp
 	${MKDIR} -p ${OBJECTDIR}
-	$(COMPILE.c) -O2 -I/cygdrive/C/Program\ Files/Castles/VEGA1000/include -I/cygdrive/C/Program\ Files\ \(x86\)/Castles/VEGA1000/include -o ${OBJECTDIR}/appmain.o appmain.c
+	$(COMPILE.cc) -O2 -DCTOS_API -I/cygdrive/C/Program\ Files/Castles/VEGA1000/include -I/cygdrive/C/Program\ Files\ \(x86\)/Castles/VEGA1000/include -I../../../3173/CastlesPay3.0_Test_Release_V3173/Util/PlatformRelated -o ${OBJECTDIR}/wifi.o wifi.cpp
 
 # Subprojects
 .build-subprojects:

@@ -8,8 +8,8 @@
 #include <stdarg.h>
 /** These two files are necessary for calling CTOS API **/
 #include <ctosapi.h>
-#include <Common.h>
-#include "DebugInfo.h"
+#include "Common.h"
+#include "DebugInfo.cpp"
 #include "StdafxHead.h"
 #include <arpa/inet.h>
 #include <sys/types.h>
@@ -22,7 +22,7 @@ CDebugInfo cDebug;
 #define d_BUFF_SIZE 128
 #define DEST_IP "192.168.31.209"
 #define DEST_PORT 8080
-
+#define (PBYTE) (BYTE*) 
 //define const wifi Data
 BYTE byIpAddr[] = "192.168.137.100";
 BYTE byMask[] = "255.255.255.0";

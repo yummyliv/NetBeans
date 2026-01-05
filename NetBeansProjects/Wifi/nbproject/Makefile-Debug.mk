@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/appmain.o
+	${OBJECTDIR}/wifi.o
 
 
 # C Compiler Flags
@@ -62,9 +62,9 @@ dist/V1/Debug/Wifi.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/V1/Debug
 	arm-oe-linux-gnueabi-g++ -o dist/V1/Debug/Wifi ${OBJECTFILES} ${LDLIBSOPTIONS} -L . "-L${SDKV1LIB}" "-L${SDKV1LIBN}"
 
-${OBJECTDIR}/appmain.o: appmain.c
+${OBJECTDIR}/wifi.o: wifi.cpp
 	${MKDIR} -p ${OBJECTDIR}
-	$(COMPILE.c) -g -I/cygdrive/C/Program\ Files/Castles/VEGA1000/include -I/cygdrive/C/Program\ Files\ \(x86\)/Castles/VEGA1000/include -o ${OBJECTDIR}/appmain.o appmain.c
+	$(COMPILE.cc) -g -I/cygdrive/C/Program\ Files/Castles/VEGA1000/include -I/cygdrive/C/Program\ Files\ \(x86\)/Castles/VEGA1000/include -o ${OBJECTDIR}/wifi.o wifi.cpp
 
 # Subprojects
 .build-subprojects:
