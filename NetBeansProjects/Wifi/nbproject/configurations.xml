@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>appmain.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>NbMakefile</projectmakefile>
+  <confs>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>OE-Gnueabi_1|OE-Gnueabi</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <commandlineTool>arm-oe-linux-gnueabi-gcc</commandlineTool>
+          <incDir>
+            <pElem>C:/Program Files/Castles/VEGA1000/include</pElem>
+            <pElem>C:/Program Files (x86)/Castles/VEGA1000/include</pElem>
+          </incDir>
+          <commandLine>"-I${SDKV1INC}" -fsigned-char -Wundef -Wstrict-prototypes -Wno-trigraphs -Wimplicit -Wformat</commandLine>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <commandlineTool>arm-oe-linux-gnueabi-g++</commandlineTool>
+          <incDir>
+            <pElem>C:/Program Files/Castles/VEGA1000/include</pElem>
+            <pElem>C:/Program Files (x86)/Castles/VEGA1000/include</pElem>
+          </incDir>
+          <commandLine>"-I${SDKV1INC}" -fsigned-char -Wundef -Wno-trigraphs -Wimplicit -Wformat</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>dist/V1/App/Wifi</output>
+          <commandlineTool>arm-oe-linux-gnueabi-g++</commandlineTool>
+          <linkerLibItems>
+            <linkerLibLibItem>pthread</linkerLibLibItem>
+            <linkerLibLibItem>dl</linkerLibLibItem>
+            <linkerLibLibItem>ctosapi</linkerLibLibItem>
+            <linkerLibLibItem>z</linkerLibLibItem>
+            <linkerLibLibItem>freetype</linkerLibLibItem>
+            <linkerLibLibItem>caemvl2</linkerLibLibItem>
+            <linkerLibLibItem>caemvl2ap</linkerLibLibItem>
+            <linkerLibLibItem>caclmdl</linkerLibLibItem>
+          </linkerLibItems>
+          <commandLine>-L . "-L${SDKV1LIB}" "-L${SDKV1LIBN}"</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="appmain.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>OE-Gnueabi|OE-Gnueabi</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandlineTool>arm-oe-linux-gnueabi-gcc</commandlineTool>
+          <incDir>
+            <pElem>C:/Program Files/Castles/VEGA1000/include</pElem>
+            <pElem>C:/Program Files (x86)/Castles/VEGA1000/include</pElem>
+          </incDir>
+          <commandLine>"-I${SDKV1INC}" -fsigned-char -Wundef -Wstrict-prototypes -Wno-trigraphs -Wimplicit -Wformat</commandLine>
+        </cTool>
+        <ccTool>
+          <commandlineTool>arm-oe-linux-gnueabi-g++</commandlineTool>
+          <incDir>
+            <pElem>C:/Program Files/Castles/VEGA1000/include</pElem>
+            <pElem>C:/Program Files (x86)/Castles/VEGA1000/include</pElem>
+          </incDir>
+          <commandLine>"-I${SDKV1INC}" -fsigned-char -Wundef -Wno-trigraphs -Wimplicit -Wformat</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>dist/V1/Debug/Wifi</output>
+          <commandlineTool>arm-oe-linux-gnueabi-g++</commandlineTool>
+          <linkerLibItems>
+            <linkerLibLibItem>pthread</linkerLibLibItem>
+            <linkerLibLibItem>dl</linkerLibLibItem>
+            <linkerLibLibItem>ctosapi</linkerLibLibItem>
+            <linkerLibLibItem>z</linkerLibLibItem>
+            <linkerLibLibItem>freetype</linkerLibLibItem>
+            <linkerLibLibItem>caemvl2ap</linkerLibLibItem>
+            <linkerLibLibItem>caemvl2</linkerLibLibItem>
+            <linkerLibLibItem>caclmdl</linkerLibLibItem>
+          </linkerLibItems>
+          <commandLine>-L . "-L${SDKV1LIB}" "-L${SDKV1LIBN}"</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="appmain.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
